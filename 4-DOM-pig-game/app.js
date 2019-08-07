@@ -43,6 +43,8 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
     document.querySelector("#score-" + activeplayer).textContent = scores[activeplayer];
     document.querySelector("#current-" + 0).textContent = 0;
     document.querySelector("#current-" + 1).textContent = 0;
+    document.querySelector(".player-" + 0 + "-panel").classList.toggle("active");
+    document.querySelector(".player-" + 1 + "-panel").classList.toggle("active");
     if (activeplayer === 0) {
         activeplayer = 1;
     }
@@ -53,7 +55,7 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
 
 document.querySelector(".btn-roll").addEventListener("click", function () {
     score = random();
-    document.getElementsByClassName("dice")[0].setAttribute("src", "../dice-" + score + ".png")
+    document.getElementsByClassName("dice")[0].setAttribute("src", "dice-" + score + ".png")
     if (score !== 1) {
         scores[activeplayer] = scores[activeplayer] + score;
         document.querySelector("#current-" + activeplayer).textContent = Number(document.querySelector("#current-" + activeplayer).textContent) + score;
@@ -63,6 +65,8 @@ document.querySelector(".btn-roll").addEventListener("click", function () {
         document.querySelector("#score-" + activeplayer).textContent = scores[activeplayer];
         document.querySelector("#current-" + 0).textContent = 0;
         document.querySelector("#current-" + 1).textContent = 0;
+        document.querySelector(".player-" + 0 + "-panel").classList.toggle("active");
+        document.querySelector(".player-" + 1 + "-panel").classList.toggle("active");
         if (activeplayer === 0) {
             activeplayer = 1;
         }
